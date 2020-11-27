@@ -1,0 +1,11 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Afficher article{% endblock %}
+
+{% block body %}
+    <h1>{{ article.title }}</h1>
+    <h2>{{ article.datePublication|date('d/m/Y') }}</h2>
+    <p>{{ article.content }}</p>
+
+    <a href="{{ path('app_index') }}">Retour</a>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Creation article{% endblock %}
+
+{% block body %}
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <a href="{{ path('app_index') }}">Retour</a>
+        <input type="submit" value="Créer un article" />
+    {{ form_end(form) }}
+{% endblock %}

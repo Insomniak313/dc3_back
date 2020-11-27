@@ -1,0 +1,35 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+
+    <table>
+        <thead>
+            <th>Id</th>
+            <th>Date</th>
+            <th>Titre</th>
+            <th>Contenu</th>
+            <th>Actions</th>
+        </thead>
+        <tbody>
+        {% for article in articles %}
+            <tr>
+                <td>{{ article.id }}</td>
+                <td></td>
+                <td>{{ article.title }}</td>
+                <td>{{ article.content }}</td>
+                <td>
+                    <a href="{{ path('app_show', {'articleId': article.id}) }}">Voir</a>
+                    <a href="{{ path('app_update', {'articleId': article.id}) }}">Modifier</a>
+                    <a href="{{ path('app_delete', {'articleId': article.id}) }}">Supprimer</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_new') }}">Créer un article</a>
+
+
+{% endblock %}
